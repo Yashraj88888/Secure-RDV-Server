@@ -1,0 +1,58 @@
+# Required Screenshots for NPACN Project Assignment
+
+Below is the list of screenshots you need to capture to prove that all assignment requirements have been met, along with the specific terminal steps to reproduce the required output.
+
+### Steps to Run the Project (For Screenshot Setup)
+
+1. **Rebuild the project:**
+   ```bash
+   make clean
+   make
+   ```
+
+2. **Open Terminal 1: Start the Central WebSocket Server**
+   ```bash
+   ./rdv_server
+   ```
+   *(Leave this running)*
+
+3. **Open Terminal 2: Monitor Real-time Persistent Logging**
+   ```bash
+   tail -f rdv_sessions.log
+   ```
+   *(Leave this running to capture connection events)*
+
+4. **Open Terminal 3 (and 4): Launch WebSocket Clients**
+   *(Run this command in multiple tabs to simulate concurrent users)*
+   ```bash
+   wscat -c wss://127.0.0.1:8443/rdv -n
+   ```
+   *Once connected, authenticate the client by typing:*
+   ```bash
+   AUTH:rdv-secret-2024
+   ```
+
+---
+
+### What Screenshots You Need to Take (And What They Prove)
+
+#### 📸 Screenshot 1: Socket Options & TLS Initialization (Server Startup)
+* **What to capture:** The terminal output right after you run `./rdv_server`.
+* **What it proves:** 
+  1. The server successfully bound to port 8443. 
+  2. The application of optimized socket configurations (`TCP_NODELAY`, `SNDBUF=262144`, `RCVBUF=65536`), verifying the requirement for "optimized socket option configuration for low-latency streaming".
+
+#### 📸 Screenshot 2: WebSocket Handshake & Authentication (Client Connect)
+* **What to capture:** 
+  1. The server terminal showing `[tls] TLS ok with 127.0.0.1`.
+  2. The server showing `[ws] Handshake complete`.
+  3. The `wscat` terminal showing the prompt where you type `AUTH:rdv-secret-2024` and receive the `{"status":"streaming"}` response.
+* **What it proves:** TLS-based encryption establishment, WebSocket framing workflow, and prevention of unauthorized access attempts.
+
+#### 📸 Screenshot 3: Concurrent Client Handling & Streaming 
+* **What to capture:** Your screen split, showing two or three different `wscat` client terminals simultaneously streaming binary frame data from the server.
+* **What it proves:** Your multi-threading `pthread` concurrency model correctly streams screen frames to *multiple authenticated users* at the same time without blocking. 
+
+#### 📸 Screenshot 4: Persistent Database Session Logging & Disconnection
+* **What to capture:** The output of `tail -f rdv_sessions.log` showing timestamps for `SESSION START` and `SESSION END`. (You can force an end by using Ctrl+C on your `wscat` terminals).
+* **What it proves:** Event and session activity accurately writes to persistent storage (thread-safe text file logging), handles sudden client disconnection, and proves resource cleanup (it calculates exactly how many bytes were transferred before the connection was dropped).

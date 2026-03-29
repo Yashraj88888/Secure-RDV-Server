@@ -1,0 +1,42 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     rdv_server
+relocations:
+  - { offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100001314, symSize: 0x120 }
+  - { offset: 0x6F, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100001314, symSize: 0x120 }
+  - { offset: 0x57E, size: 0x8, addend: 0x0, symName: _apply_socket_options, symObjAddr: 0x0, symBinAddr: 0x100001434, symSize: 0xD8 }
+  - { offset: 0x597, size: 0x8, addend: 0x0, symName: _g_srv, symObjAddr: 0x42F8, symBinAddr: 0x100008048, symSize: 0x0 }
+  - { offset: 0x9D5, size: 0x8, addend: 0x0, symName: _apply_socket_options, symObjAddr: 0x0, symBinAddr: 0x100001434, symSize: 0xD8 }
+  - { offset: 0xB48, size: 0x8, addend: 0x0, symName: _server_init, symObjAddr: 0xD8, symBinAddr: 0x10000150C, symSize: 0x1DC }
+  - { offset: 0xEA9, size: 0x8, addend: 0x0, symName: _server_run, symObjAddr: 0x2B4, symBinAddr: 0x1000016E8, symSize: 0x2FC }
+  - { offset: 0x1655, size: 0x8, addend: 0x0, symName: _sig_handler, symObjAddr: 0x5B0, symBinAddr: 0x1000019E4, symSize: 0x3C }
+  - { offset: 0x1687, size: 0x8, addend: 0x0, symName: _server_shutdown, symObjAddr: 0x5EC, symBinAddr: 0x100001A20, symSize: 0xCC }
+  - { offset: 0x18CF, size: 0x8, addend: 0x0, symName: _alloc_thread_arg, symObjAddr: 0x0, symBinAddr: 0x100001AEC, symSize: 0x74 }
+  - { offset: 0x1902, size: 0x8, addend: 0x0, symName: _s_args, symObjAddr: 0x5420, symBinAddr: 0x100008050, symSize: 0x0 }
+  - { offset: 0x1CEB, size: 0x8, addend: 0x0, symName: _s_args_lock, symObjAddr: 0xB30, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x1D85, size: 0x8, addend: 0x0, symName: _alloc_thread_arg, symObjAddr: 0x0, symBinAddr: 0x100001AEC, symSize: 0x74 }
+  - { offset: 0x1E1D, size: 0x8, addend: 0x0, symName: _free_thread_arg, symObjAddr: 0x74, symBinAddr: 0x100001B60, symSize: 0x34 }
+  - { offset: 0x1E63, size: 0x8, addend: 0x0, symName: _ws_send_frame, symObjAddr: 0xA8, symBinAddr: 0x100001B94, symSize: 0x1F8 }
+  - { offset: 0x20FE, size: 0x8, addend: 0x0, symName: _ws_recv_frame, symObjAddr: 0x2A0, symBinAddr: 0x100001D8C, symSize: 0x1EC }
+  - { offset: 0x22A9, size: 0x8, addend: 0x0, symName: _ws_handshake, symObjAddr: 0x48C, symBinAddr: 0x100001F78, symSize: 0x200 }
+  - { offset: 0x276B, size: 0x8, addend: 0x0, symName: _ws_authenticate, symObjAddr: 0x68C, symBinAddr: 0x100002178, symSize: 0x1E0 }
+  - { offset: 0x2992, size: 0x8, addend: 0x0, symName: _client_thread, symObjAddr: 0x86C, symBinAddr: 0x100002358, symSize: 0x2C4 }
+  - { offset: 0x2E8D, size: 0x8, addend: 0x0, symName: _capture_frame, symObjAddr: 0x0, symBinAddr: 0x10000261C, symSize: 0x9C }
+  - { offset: 0x327B, size: 0x8, addend: 0x0, symName: _capture_frame, symObjAddr: 0x0, symBinAddr: 0x10000261C, symSize: 0x9C }
+  - { offset: 0x33F8, size: 0x8, addend: 0x0, symName: _capture_thread, symObjAddr: 0x9C, symBinAddr: 0x1000026B8, symSize: 0x1E0 }
+  - { offset: 0x3633, size: 0x8, addend: 0x0, symName: _db_init, symObjAddr: 0x0, symBinAddr: 0x100002898, symSize: 0xC0 }
+  - { offset: 0x364E, size: 0x8, addend: 0x0, symName: _db_open_session, symObjAddr: 0xC0, symBinAddr: 0x100002958, symSize: 0xE8 }
+  - { offset: 0x3673, size: 0x8, addend: 0x0, symName: _db_open_session.next_id, symObjAddr: 0x6F0, symBinAddr: 0x100008040, symSize: 0x0 }
+  - { offset: 0x3785, size: 0x8, addend: 0x0, symName: _log_file, symObjAddr: 0x3090, symBinAddr: 0x100008250, symSize: 0x0 }
+  - { offset: 0x398F, size: 0x8, addend: 0x0, symName: _EVENT_NAMES, symObjAddr: 0x6F8, symBinAddr: 0x1000042A8, symSize: 0x0 }
+  - { offset: 0x3A0C, size: 0x8, addend: 0x0, symName: _db_init, symObjAddr: 0x0, symBinAddr: 0x100002898, symSize: 0xC0 }
+  - { offset: 0x3C00, size: 0x8, addend: 0x0, symName: _db_init.cold.1, symObjAddr: 0x410, symBinAddr: 0x100002F7C, symSize: 0x44 }
+  - { offset: 0x3C77, size: 0x8, addend: 0x0, symName: _db_close_session, symObjAddr: 0x1A8, symBinAddr: 0x100002A40, symSize: 0xD0 }
+  - { offset: 0x3D6B, size: 0x8, addend: 0x0, symName: _db_log_event, symObjAddr: 0x278, symBinAddr: 0x100002B10, symSize: 0x10C }
+  - { offset: 0x3E6E, size: 0x8, addend: 0x0, symName: _db_close, symObjAddr: 0x384, symBinAddr: 0x100002C1C, symSize: 0x8C }
+  - { offset: 0x4233, size: 0x8, addend: 0x0, symName: _tls_create_context, symObjAddr: 0x0, symBinAddr: 0x100002CA8, symSize: 0x164 }
+  - { offset: 0x425A, size: 0x8, addend: 0x0, symName: _VALID_TOKEN, symObjAddr: 0x40B, symBinAddr: 0x100003F38, symSize: 0x0 }
+  - { offset: 0x42A4, size: 0x8, addend: 0x0, symName: _tls_create_context, symObjAddr: 0x0, symBinAddr: 0x100002CA8, symSize: 0x164 }
+  - { offset: 0x47D3, size: 0x8, addend: 0x0, symName: _ws_compute_accept, symObjAddr: 0x164, symBinAddr: 0x100002E0C, symSize: 0x124 }
+  - { offset: 0x4A7B, size: 0x8, addend: 0x0, symName: _token_verify, symObjAddr: 0x288, symBinAddr: 0x100002F30, symSize: 0x4C }
+...
